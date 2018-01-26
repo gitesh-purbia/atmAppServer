@@ -1,0 +1,74 @@
+{
+  "name": "ATMApp",
+  "version": "0.0.1",
+  "description": "Atm app api",
+  "homepage": "",
+  "author": {
+    "name": "Gitesh Purbia",
+    "email": "gitesh.purbiya22@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "api/",
+    "components/",
+    "config/",
+    "app.js",
+    "routes.js"
+  ],
+  "main": "app.js",
+  "keywords": [
+    "express",
+    "json",
+    "api"
+  ],
+  "repository": "",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "composable-middleware": "^0.3.0",
+    "compression": "^1.6.1",
+    "cookie-parser": "^1.4.1",
+    "datauri": "^1.0.5",
+    "errorhandler": "^1.4.3",
+    "express": "^4.13.4",
+    "express-formidable": "^1.0.0",
+    "express-jwt": "^3.3.0",
+    "jsonwebtoken": "^7.0.1",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.12.4",
+    "morgan": "^1.7.0",
+    "multer": "^1.3.0",
+    "nodemon": "^1.12.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.0-beta.6",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.2.0",
+    "eslint": "^3.0.0",
+    "eslint-config-xo-space": "^0.14.0",
+    "eslint-plugin-babel": "^3.1.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^1.0.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-nsp": "^2.3.1",
+    "gulp-plumber": "^1.1.0",
+    "nodemon": "^1.9.1",
+    "proxyquire": "^1.7.4",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
+    "supertest": "^1.2.0"
+  },
+  "scripts": {
+    "start": "nodemon -e js app.js",
+    "test": "NODE_ENV=test gulp"
+  },
+  "private": true,
+  "eslintConfig": {
+    "extends": "xo-space/esnext",
+    "env": {
+      "mocha": true
+    }
+  }
+}
