@@ -1,8 +1,8 @@
 'use strict';
 const CardsModel = require('./cards.model');
+const TransactionsModel = require('../transactions/transactions.model');
 
 module.exports.getCardInfo = function (req, res, next) {
-  console.log('==========================================');
   CardsModel.findOne({
     cardNumber: req.body.cardNumber,
     pin: req.body.pin
@@ -36,7 +36,18 @@ module.exports.withdrawAmount = (req, res, next) => {
         if(err) {
           res.status(500).send(err);
         } else {
-          return res.json({oldAmount: card.balance, newAmount: parseInt(card.balance, 10) - parseInt(req.body.withdrawAmount, 10)});
+          const transactionObj = new TransactionsModel({
+            cardNumber: req.body.cardNumber,
+            amount: req.body.withdrawAmount,
+            date: new Date(),
+            transactionType: 'Debited'
+          });
+          transactionObj.save(err => {
+            if(err) {
+              res.status(500).send(err);
+            }
+            return res.json({oldAmount: card.balance, newAmount: parseInt(card.balance, 10) - parseInt(req.body.withdrawAmount, 10)});
+          });
         }
       });
     }

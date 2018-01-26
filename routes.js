@@ -15,6 +15,7 @@ module.exports = function(app) {
   });
 
   app.use('/api/cards', require('./api/cards'));
+  app.use('/api/transactions', require('./api/transactions'));
 
   // All undefined asset or api routes should return a 404
   app.route('/:url(api)/*')
