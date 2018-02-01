@@ -7,5 +7,5 @@ module.exports = {
   mongo: {
     uri: 'mongodb://localhost/test'
   },
-  seedDB: false
+  seedDB: true
 };

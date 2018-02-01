@@ -5,10 +5,10 @@
 'use strict';
 
 const Cards = require('../api/cards/cards.model');
-
-Cards.removeAsync()
+console.log(Cards);
+Cards.remove()
   .then(() => {
-    Cards.createAsync({
+    Cards.create({
       cardNumber: 232345456767,
       pin: 2323,
       balance: 5000
